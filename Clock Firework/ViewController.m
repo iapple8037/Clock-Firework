@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "FireworkLayerView.h"
+
 
 @interface ViewController ()
 
@@ -17,7 +19,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    FireworkLayerView *v = [[FireworkLayerView alloc] initWithFrame:self.view.bounds];
+    v.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:v];
+    
 }
 
 - (void)didReceiveMemoryWarning

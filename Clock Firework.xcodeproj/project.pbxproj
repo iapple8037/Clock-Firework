@@ -22,6 +22,8 @@
 		9C71CB5018D7482F00D7C08F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C71CB2F18D7482F00D7C08F /* UIKit.framework */; };
 		9C71CB5818D7482F00D7C08F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C71CB5618D7482F00D7C08F /* InfoPlist.strings */; };
 		9C71CB5A18D7482F00D7C08F /* Clock_FireworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C71CB5918D7482F00D7C08F /* Clock_FireworkTests.m */; };
+		9C71CB6518D748D400D7C08F /* FireworkLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C71CB6418D748D400D7C08F /* FireworkLayerView.m */; };
+		F5D94BB718D751920058D349 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D94BB618D751920058D349 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,9 @@
 		9C71CB5518D7482F00D7C08F /* Clock FireworkTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Clock FireworkTests-Info.plist"; sourceTree = "<group>"; };
 		9C71CB5718D7482F00D7C08F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9C71CB5918D7482F00D7C08F /* Clock_FireworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Clock_FireworkTests.m; sourceTree = "<group>"; };
+		9C71CB6318D748D400D7C08F /* FireworkLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FireworkLayerView.h; sourceTree = "<group>"; };
+		9C71CB6418D748D400D7C08F /* FireworkLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FireworkLayerView.m; sourceTree = "<group>"; };
+		F5D94BB618D751920058D349 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5D94BB718D751920058D349 /* QuartzCore.framework in Frameworks */,
 				9C71CB2E18D7482F00D7C08F /* CoreGraphics.framework in Frameworks */,
 				9C71CB3018D7482F00D7C08F /* UIKit.framework in Frameworks */,
 				9C71CB2C18D7482F00D7C08F /* Foundation.framework in Frameworks */,
@@ -103,6 +109,7 @@
 		9C71CB2A18D7482F00D7C08F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F5D94BB618D751920058D349 /* QuartzCore.framework */,
 				9C71CB2B18D7482F00D7C08F /* Foundation.framework */,
 				9C71CB2D18D7482F00D7C08F /* CoreGraphics.framework */,
 				9C71CB2F18D7482F00D7C08F /* UIKit.framework */,
@@ -120,6 +127,8 @@
 				9C71CB4018D7482F00D7C08F /* Main_iPad.storyboard */,
 				9C71CB4318D7482F00D7C08F /* ViewController.h */,
 				9C71CB4418D7482F00D7C08F /* ViewController.m */,
+				9C71CB6318D748D400D7C08F /* FireworkLayerView.h */,
+				9C71CB6418D748D400D7C08F /* FireworkLayerView.m */,
 				9C71CB4618D7482F00D7C08F /* Images.xcassets */,
 				9C71CB3218D7482F00D7C08F /* Supporting Files */,
 			);
@@ -256,6 +265,7 @@
 				9C71CB4518D7482F00D7C08F /* ViewController.m in Sources */,
 				9C71CB3C18D7482F00D7C08F /* AppDelegate.m in Sources */,
 				9C71CB3818D7482F00D7C08F /* main.m in Sources */,
+				9C71CB6518D748D400D7C08F /* FireworkLayerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +480,7 @@
 				9C71CB5F18D7482F00D7C08F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9C71CB6018D7482F00D7C08F /* Build configuration list for PBXNativeTarget "Clock FireworkTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +489,7 @@
 				9C71CB6218D7482F00D7C08F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
