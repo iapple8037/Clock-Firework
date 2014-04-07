@@ -10,4 +10,7 @@
 
 @interface ViewController : UIViewController
 
+    
+- (void)timerFireMethod:(NSTimer *)timer;
+
 @end

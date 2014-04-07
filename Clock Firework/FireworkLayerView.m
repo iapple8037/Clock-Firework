@@ -9,7 +9,7 @@
 #import "FireworkLayerView.h"
 
 
-#define FIRE_COUNT 20 //  花火1つの火の玉の数
+#define FIRE_COUNT 24 //  花火1つの火の玉の数
 
 /**
  *  花火ひとつ分のレイヤー定義
@@ -56,8 +56,9 @@
     for (int i = 0; i < FIRE_COUNT; i++) {
         //  addSubLayerでretainされるのでretainはしない
         CALayer* layer = [CALayer layer];
-        layer.frame = CGRectMake(0, 0, 20, 20);
-        layer.cornerRadius = 10.0f;
+        layer.frame = CGRectMake(0, 0, 30, 30);
+        //layer.contents = (id)[UIImage imageNamed:@"test.jpg"].CGImage;
+        layer.cornerRadius = 15.0f;
         layer.masksToBounds = YES;
         float angle = [self indexToRadian:i];
         layer.position = CGPointMake(cos(angle), sin(angle));
@@ -74,7 +75,7 @@
 -(void)bang
 {
     float radius = (rand() % 5 + 1) * 50; //  拡散半径をランダムに設定
-    float duration = radius / 50.0; //  広がるスピードは一定にする。
+    float duration = radius / 40.0; //  広がるスピードは一定にする。
     [CATransaction begin];
     [CATransaction setAnimationDuration:duration];
     //  広がり終わった時点で自身を親レーヤーから取り外す。
@@ -108,6 +109,9 @@
 }
 
 
+
+
+
 @end
 
 
@@ -127,6 +131,7 @@
 /**
  *  10ポイント以上指の移動があれば1発、花火を打ち上げる。
  */
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     CGPoint pos = [(UITouch*)[touches anyObject] locationInView:self];

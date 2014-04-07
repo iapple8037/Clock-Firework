@@ -23,6 +23,7 @@
 		9C71CB5818D7482F00D7C08F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C71CB5618D7482F00D7C08F /* InfoPlist.strings */; };
 		9C71CB5A18D7482F00D7C08F /* Clock_FireworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C71CB5918D7482F00D7C08F /* Clock_FireworkTests.m */; };
 		9C71CB6518D748D400D7C08F /* FireworkLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C71CB6418D748D400D7C08F /* FireworkLayerView.m */; };
+		9C71CB6718D9059A00D7C08F /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C71CB6618D9059A00D7C08F /* test.jpg */; };
 		F5D94BB718D751920058D349 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5D94BB618D751920058D349 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		9C71CB5918D7482F00D7C08F /* Clock_FireworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Clock_FireworkTests.m; sourceTree = "<group>"; };
 		9C71CB6318D748D400D7C08F /* FireworkLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FireworkLayerView.h; sourceTree = "<group>"; };
 		9C71CB6418D748D400D7C08F /* FireworkLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FireworkLayerView.m; sourceTree = "<group>"; };
+		9C71CB6618D9059A00D7C08F /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
 		F5D94BB618D751920058D349 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -121,6 +123,7 @@
 		9C71CB3118D7482F00D7C08F /* Clock Firework */ = {
 			isa = PBXGroup;
 			children = (
+				9C71CB6618D9059A00D7C08F /* test.jpg */,
 				9C71CB3A18D7482F00D7C08F /* AppDelegate.h */,
 				9C71CB3B18D7482F00D7C08F /* AppDelegate.m */,
 				9C71CB3D18D7482F00D7C08F /* Main_iPhone.storyboard */,
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C71CB4218D7482F00D7C08F /* Main_iPad.storyboard in Resources */,
+				9C71CB6718D9059A00D7C08F /* test.jpg in Resources */,
 				9C71CB4718D7482F00D7C08F /* Images.xcassets in Resources */,
 				9C71CB3F18D7482F00D7C08F /* Main_iPhone.storyboard in Resources */,
 				9C71CB3618D7482F00D7C08F /* InfoPlist.strings in Resources */,
