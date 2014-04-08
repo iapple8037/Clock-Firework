@@ -98,11 +98,12 @@
 -(void)launch
 {
     CGPoint pt = self.position;
-    //float height = (rand() % 5 + 1) * 50 + 50;     //  50…300の高さをランダムに設定
+    //float height = (rand() % 5 + 1) * 50 + 50;
+    //50…300の高さをランダムに設定
     float height = (arc4random() % 5 + 1) * 50 + 50;
     pt.y -= height;
     [CATransaction begin];
-    [CATransaction setAnimationDuration:1.0 * height / 300.0]; //  300/1秒で移動
+    [CATransaction setAnimationDuration:1.0 * height / 300.0]; //300/1秒で移動
     self.position = pt;
     [CATransaction commit];
     [self performSelector:@selector(bang) withObject:nil afterDelay:0.5];
@@ -150,7 +151,20 @@
 }
 
 
-
+/**
+ *  時間が毎時丁度になったら1発、花火を打ち上げる。
+ */
+/*
+- (void) fire
+{
+    CGPoint pos = CGPointMake(180, 600);
+    starLayer* star = [starLayer layer];
+    [star setpos:pos];
+    [self.layer addSublayer:star];
+    //  直に呼ぶとアニメーションがかからないのでこのようにする。ただし間をあける必要は無いので　afterDelay:0 とする
+    [star performSelector:@selector(launch) withObject:nil afterDelay:0];
+}
+*/
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

@@ -87,7 +87,11 @@
  NSInteger loopCount; //ループのカウントをとる変数
 */
 
-- (void) fire //timeを使って花火をうつタイミングを作る
+/**
+ *  timeを使って花火をうつタイミングを作る
+ */
+
+- (void) fire
 {
     self.t1 = [NSTimer scheduledTimerWithTimeInterval:0.5
                                                    target:self
@@ -129,6 +133,8 @@
 {
     if (_t1 == timer) {
         //t1での花火打ち上げ
+        
+        NSLog(@"t1は打ち上げられました");
         _t1 = nil;
         //呼び出されたメソッドではインスタンス変数にnilを入れるようにしておけば、未実行のNSTimerの判別もできるでしょう。
     }
