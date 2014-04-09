@@ -20,6 +20,8 @@
 @property (nonatomic, weak) NSTimer *t5;
 @property (nonatomic, weak) NSTimer *t6;
 
+//@property (nonatomic, strong) FireworkLayerView *timeFire;
+
 @end
 
 @implementation ViewController
@@ -66,7 +68,7 @@
     
     NSLog(@"%02d時 %02d分 %02d秒", hour, minute, second);
     
-    if (minute == 00 && second == 00) {
+    if (minute == 17 && second == 30) {
         NSLog(@"時刻はちょうどになりました。");
         [self fire]; //時間ちょうどになったら、発動されるメソッド。
         }else{
@@ -133,6 +135,9 @@
 {
     if (_t1 == timer) {
         //t1での花火打ち上げ
+        FireworkLayerView *timeFire = [[FireworkLayerView alloc]init];
+        [timeFire fire];
+        
         
         NSLog(@"t1は打ち上げられました");
         _t1 = nil;

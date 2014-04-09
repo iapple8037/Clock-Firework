@@ -12,4 +12,6 @@
     CGPoint lastPos;
 }
 
+- (void) fire;
+
 @end

@@ -154,17 +154,16 @@
 /**
  *  時間が毎時丁度になったら1発、花火を打ち上げる。
  */
-/*
 - (void) fire
 {
-    CGPoint pos = CGPointMake(180, 600);
+    CGPoint pos = CGPointMake(380, 100);
     starLayer* star = [starLayer layer];
     [star setpos:pos];
     [self.layer addSublayer:star];
     //  直に呼ぶとアニメーションがかからないのでこのようにする。ただし間をあける必要は無いので　afterDelay:0 とする
     [star performSelector:@selector(launch) withObject:nil afterDelay:0];
 }
-*/
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
