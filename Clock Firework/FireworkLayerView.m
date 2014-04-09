@@ -154,7 +154,7 @@
 /**
  *  時間が毎時丁度になったら1発、花火を打ち上げる。
  */
-- (void) fire
+- (void) fireWork
 {
     CGPoint pos = CGPointMake(380, 100);
     starLayer* star = [starLayer layer];

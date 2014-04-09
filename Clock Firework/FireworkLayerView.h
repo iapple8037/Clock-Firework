@@ -12,6 +12,6 @@
     CGPoint lastPos;
 }
 
-- (void) fire;
+- (void) fireWork;
 
 @end

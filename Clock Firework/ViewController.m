@@ -68,7 +68,7 @@
     
     NSLog(@"%02d時 %02d分 %02d秒", hour, minute, second);
     
-    if (minute == 17 && second == 30) {
+    if (minute == 24 && second == 40) {
         NSLog(@"時刻はちょうどになりました。");
         [self fire]; //時間ちょうどになったら、発動されるメソッド。
         }else{
@@ -136,7 +136,7 @@
     if (_t1 == timer) {
         //t1での花火打ち上げ
         FireworkLayerView *timeFire = [[FireworkLayerView alloc]init];
-        [timeFire fire];
+        [timeFire fireWork];
         
         
         NSLog(@"t1は打ち上げられました");
