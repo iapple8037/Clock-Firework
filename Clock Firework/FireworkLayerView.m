@@ -152,7 +152,7 @@
  */
 - (void) fireWork
 {
-    CGPoint pos = CGPointMake(500, 100);
+    CGPoint pos = CGPointMake(self.bounds.size.width * 0.5, self.bounds.size.height * 0.7);
     starLayer* star = [starLayer layer];
     [star setpos:pos];
     [self.layer addSublayer:star];
