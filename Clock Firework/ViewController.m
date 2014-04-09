@@ -68,7 +68,7 @@
     
     NSLog(@"%02d時 %02d分 %02d秒", hour, minute, second);
     
-    if (minute == 24 && second == 40) {
+    if (minute == 21 && second == 20) {
         NSLog(@"時刻はちょうどになりました。");
         [self fire]; //時間ちょうどになったら、発動されるメソッド。
         }else{
@@ -143,6 +143,17 @@
         _t1 = nil;
         //呼び出されたメソッドではインスタンス変数にnilを入れるようにしておけば、未実行のNSTimerの判別もできるでしょう。
     }
+    if (_t2 == timer) {
+        //t1での花火打ち上げ
+        FireworkLayerView *timeFire = [[FireworkLayerView alloc]init];
+        [timeFire fireWork];
+        
+        
+        NSLog(@"t2は打ち上げられました");
+        _t2 = nil;
+        //呼び出されたメソッドではインスタンス変数にnilを入れるようにしておけば、未実行のNSTimerの判別もできるでしょう。
+    }
+
 }
 
 

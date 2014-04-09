@@ -109,10 +109,6 @@
     [self performSelector:@selector(bang) withObject:nil afterDelay:0.5];
 }
 
-
-
-
-
 @end
 
 
@@ -156,7 +152,7 @@
  */
 - (void) fireWork
 {
-    CGPoint pos = CGPointMake(380, 100);
+    CGPoint pos = CGPointMake(500, 100);
     starLayer* star = [starLayer layer];
     [star setpos:pos];
     [self.layer addSublayer:star];
