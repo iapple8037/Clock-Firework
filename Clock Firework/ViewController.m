@@ -9,16 +9,12 @@
 #import "ViewController.h"
 #import "FireworkLayerView.h"
 
-
-@interface ViewController ()
+@interface ViewController () {
+    __weak NSTimer* _timers[6];
+    FireworkLayerView* _fireworkLayerView;
+}
 
 //@property (nonatomic, assign) NSTimer *loadTimer;
-@property (nonatomic, weak) NSTimer *t1;
-@property (nonatomic, weak) NSTimer *t2;
-@property (nonatomic, weak) NSTimer *t3;
-@property (nonatomic, weak) NSTimer *t4;
-@property (nonatomic, weak) NSTimer *t5;
-@property (nonatomic, weak) NSTimer *t6;
 
 //@property (nonatomic, strong) FireworkLayerView *timeFire;
 
@@ -44,8 +40,18 @@
     FireworkLayerView *v = [[FireworkLayerView alloc] initWithFrame:self.view.bounds];
     v.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:v];
-    
-        
+    _fireworkLayerView = v;
+    [self fire];        //  実験用に強制着火
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    //  残りのタイマー解除
+    for (int i = 0; i < 6; i++) {
+        [_timers[i] invalidate];
+        _timers[i] = nil;
+    }
 }
 
     //時刻を読み出す
@@ -95,65 +101,35 @@
 
 - (void) fire
 {
-    self.t1 = [NSTimer scheduledTimerWithTimeInterval:0.5
+    NSTimeInterval timeIntervals[] = {
+        0.5,
+        0.5,
+        0.5 + 1.0,
+        0.5 + 1.0 + 0.5,
+        0.5 + 1.0 + 0.5 + 0.5,
+        0.5 + 1.0 + 0.5 + 0.5 + 0.8,
+        0.5 + 1.0 + 0.5 + 0.5 + 0.8 + 0.2
+    };
+    for (int i = 0; i < 6; i++) {
+        [_timers[i] invalidate];
+        _timers[i] = [NSTimer scheduledTimerWithTimeInterval:timeIntervals[i]
                                                    target:self
                                                  selector:@selector(timerFireMethod:)
                                                  userInfo:nil
                                                   repeats:NO];
-    
-    self.t2 = [NSTimer scheduledTimerWithTimeInterval:0.5 + 1.0
-                                                   target:self
-                                                 selector:@selector(timerFireMethod:)
-                                                 userInfo:nil
-                                                  repeats:NO];
-    
-    self.t3 = [NSTimer scheduledTimerWithTimeInterval:0.5 + 1.0 + 0.5
-                                                   target:self
-                                                 selector:@selector(timerFireMethod:)
-                                                 userInfo:nil
-                                                  repeats:NO];
-    
-    self.t4 = [NSTimer scheduledTimerWithTimeInterval:0.5 + 1.0 + 0.5 + 0.5
-                                                   target:self
-                                                 selector:@selector(timerFireMethod:)
-                                                 userInfo:nil
-                                                  repeats:NO];
-    self.t5 = [NSTimer scheduledTimerWithTimeInterval:0.5 + 1.0 + 0.5 + 0.5 + 0.8
-                                                   target:self
-                                                 selector:@selector(timerFireMethod:)
-                                                 userInfo:nil
-                                                  repeats:NO];
-    
-    self.t6 = [NSTimer scheduledTimerWithTimeInterval:0.5 + 1.0 + 0.5 + 0.5 + 0.8 + 0.2
-                                                   target:self
-                                                 selector:@selector(timerFireMethod:)
-                                                 userInfo:nil
-                                                  repeats:NO];
+    }
 }
 
 - (void)timerFireMethod:(NSTimer *)timer
 {
-    if (_t1 == timer) {
-        //t1での花火打ち上げ
-        FireworkLayerView *timeFire = [[FireworkLayerView alloc]init];
-        [timeFire fireWork];
-        
-        
-        NSLog(@"t1は打ち上げられました");
-        _t1 = nil;
-        //呼び出されたメソッドではインスタンス変数にnilを入れるようにしておけば、未実行のNSTimerの判別もできるでしょう。
+    for (int i = 0; i < 6; i++) {
+        if (_timers[i] == timer) {
+            //  花火打ち上げ
+            [_fireworkLayerView fireWork];
+            NSLog(@"_timers[%d]は打ち上げられました", i);
+            _timers[i] = nil;   //  このタイマーは動作が完了した
+        }
     }
-    if (_t2 == timer) {
-        //t1での花火打ち上げ
-        FireworkLayerView *timeFire = [[FireworkLayerView alloc]init];
-        [timeFire fireWork];
-        
-        
-        NSLog(@"t2は打ち上げられました");
-        _t2 = nil;
-        //呼び出されたメソッドではインスタンス変数にnilを入れるようにしておけば、未実行のNSTimerの判別もできるでしょう。
-    }
-
 }
 
 
