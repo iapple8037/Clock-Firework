@@ -56,9 +56,9 @@
     for (int i = 0; i < FIRE_COUNT; i++) {
         //  addSubLayerでretainされるのでretainはしない
         CALayer* layer = [CALayer layer];
-        layer.frame = CGRectMake(0, 0, 30, 30);
+        layer.frame = CGRectMake(0, 0, 24, 24);
         //layer.contents = (id)[UIImage imageNamed:@"test.jpg"].CGImage;
-        layer.cornerRadius = 15.0f;
+        layer.cornerRadius = 12.0f;
         layer.masksToBounds = YES;
         float angle = [self indexToRadian:i];
         layer.position = CGPointMake(cos(angle), sin(angle));
@@ -100,7 +100,7 @@
     CGPoint pt = self.position;
     //float height = (rand() % 5 + 1) * 50 + 50;
     //50…300の高さをランダムに設定
-    float height = (arc4random() % 5 + 1) * 50 + 50;
+    float height = (arc4random() % 5 + 1) * 50 + 100;
     pt.y -= height;
     [CATransaction begin];
     [CATransaction setAnimationDuration:1.0 * height / 300.0]; //300/1秒で移動
@@ -152,7 +152,9 @@
  */
 - (void) fireWork
 {
-    CGPoint pos = CGPointMake(500, 100);
+    int i = self.bounds.size.width;
+    //CGPoint pos = CGPointMake(self.bounds.size.width*0.5, self.bounds.size.height*0.7);
+    CGPoint pos = CGPointMake(20 + arc4random()% i, self.bounds.size.height*0.7);
     starLayer* star = [starLayer layer];
     [star setpos:pos];
     [self.layer addSublayer:star];
